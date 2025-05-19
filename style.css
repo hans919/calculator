@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 350px;
+}
+
+.calculator-body {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.input-display {
+    font-size: 1.5rem;
+    text-align: right;
+    height: 60px;
+    background-color: #f8f9fa;
+}
+
+.lyrics-display {
+    height: 80px;
+    background-color: #fcefee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(232, 62, 140, 0.2);
+    border: 1px solid rgba(232, 62, 140, 0.3);
+}
+
+.lyrics-display.active {
+    opacity: 1;
+}
+
+#lyrics-text {
+    font-size: 1.5rem;
+    color: #e83e8c;
+    text-align: center;
+    font-weight: 600;
+    animation: textFade 2.5s ease-in-out;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn {
+    font-weight: 600;
+    font-size: 1.2rem;
+    height: 55px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    color: #495057;
+}
+
+.btn-primary {
+    background-color: #8e44ad;
+    border-color: #8e44ad;
+}
+
+.btn-success {
+    background-color: #e83e8c;
+    border-color: #e83e8c;
+}
+
+/* Animation for the lyrics */
+@keyframes textFade {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    15% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    20% {
+        transform: scale(1.05);
+    }
+    30% {
+        transform: scale(1);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Animation for credit that stays visible */
+@keyframes creditFade {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 400px) {
+    .calculator-container {
+        max-width: 300px;
+    }
+    
+    .btn {
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .input-display {
+        font-size: 1.3rem;
+        height: 50px;
+    }
+    
+    .lyrics-display {
+        height: 70px;
+        padding: 10px;
+    }
+    
+    #lyrics-text {
+        font-size: 1.2rem;
+    }
+}
