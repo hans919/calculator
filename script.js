@@ -121,7 +121,7 @@ function showLyricPart(lyricText) {
     lyricsText.textContent = lyricText;
     
     // Reset font size for lyrics
-    lyricsText.style.fontSize = "1.5rem";
+    lyricsText.style.fontSize = "1.3rem";
     
     // Reset animation
     lyricsText.style.animation = 'none';
